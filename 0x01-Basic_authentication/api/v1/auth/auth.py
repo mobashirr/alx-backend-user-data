@@ -17,8 +17,8 @@ class Auth:
         if not path or not excluded_paths:
             return True
         else:
-            cur_path = path.split('/')
-            ex_paths = [path.split('/') for path in excluded_paths]
+            cur_path = ''.join(path.split('/'))
+            ex_paths = [''.join(path.split('/')) for path in excluded_paths]
             if cur_path in ex_paths:
                 return False
         return True
@@ -36,4 +36,3 @@ class Auth:
         Currently returns None as default behavior.
         """
         return None
-
